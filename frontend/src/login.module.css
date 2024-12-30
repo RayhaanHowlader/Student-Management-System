@@ -1,0 +1,95 @@
+*{
+    font-family: "Ubuntu", serif;
+  
+  }
+  #container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1{
+    font-weight:bold;
+    color:white;
+    margin-bottom:30px;
+  }
+  #cont{
+    padding:20px;
+    border:3px solid whitesmoke;
+    box-shadow:6px 6px 16px 6px whitesmoke;
+    width:800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height:400px;
+  }
+ body{
+    background-color: black;
+ }
+
+  
+  body::before{
+    content:"";
+    height:100%;
+    opacity: 0.9;;
+    width:100%;
+    z-index:-1;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:cover;
+    position:absolute;
+    background-image:url("https://png.pngtree.com/background/20230401/original/pngtree-blackboard-teaching-background-picture-image_2252944.jpg");
+  }
+  .btn{
+    width:150px;
+    height:40px;
+    margin-top:20px;
+  }
+  .submit{
+    background-color: blue;
+    font-weight: bold;
+    color:white;
+    padding:10px 35px;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-top:15px;
+  }
+  .submit:hover{
+
+  }
+  .input:hover{
+    box-shadow:5px 5px 8px aqua;
+  }
+  span svg{
+    margin-right:5px;
+  }
+  .input{
+    width:300px;
+    height:30px;
+    padding:15px 10px;
+    font-size:20px;
+    border-radius:10px;
+  }
+  
+  .label{
+    display: flex;
+    color:white;
+    font-weight: bolder;
+    margin-right:10px;
+  }
+  .heading{
+    display: flex;
+    font-size:30px;
+  }
+  .heading svg{
+    margin-right:10px;
+  }
+  span{
+    flex-wrap: wrap;
+    margin:10px;
+    display: flex;
+  }
+  .label{
+    font-size:18px;
+  }
