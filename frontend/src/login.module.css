@@ -28,7 +28,7 @@
     background-color: black;
  }
 
-  
+/*   
   body::before{
     content:"";
     height:100%;
@@ -40,7 +40,7 @@
     background-size:cover;
     position:absolute;
     background-image:url("https://png.pngtree.com/background/20230401/original/pngtree-blackboard-teaching-background-picture-image_2252944.jpg");
-  }
+  } */
   .btn{
     width:150px;
     height:40px;

@@ -1,4 +1,4 @@
-import {Button } from "./components/ui/button.jsx"
+import { Button } from "./components/ui/button.jsx"
 import styles from './login.module.css'
 import {useState} from "react"
 import axios from "axios";
