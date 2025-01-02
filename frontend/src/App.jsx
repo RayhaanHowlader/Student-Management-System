@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
+import React from "react";
+import Verify from "./adminverify.jsx"
+import Admission from "./admissionform.jsx"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Login.jsx";
+import Register from "./Register.jsx"; 
+import './App.css';
+import Dashboard from "./dashboard.jsx";
+import Admin from './admin.jsx'
+import HomePage from "./pages/HomePage.jsx"
+import Results from './resultsform.jsx'
+import AboutPage  from "./pages/AboutPage.jsx";
+import ResultsPage from './resultpage.jsx'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='text-blue-700'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="text-yellow-600">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        {/* Define routes for Register and Login components */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dash" element={<Dashboard/>}/>
+        <Route path="/admin" element={<Admin/>}/>
+        <Route path="/results" element={<Results/>}/>
+        <Route path="/resultpage" element={<ResultsPage/>}/>
+        <Route path="/admissionform" element={<Admission/>}/>
+        <Route path="/adminverify" element={<Verify/>}/>
+        <Route path="/about" element={<AboutPage/>}/>
+        <Route path="/" element={<HomePage/>}/>
+        </Routes>
+    </BrowserRouter>
+  );
+
 }
 
 export default App;
