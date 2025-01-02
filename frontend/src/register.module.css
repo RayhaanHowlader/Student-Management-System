@@ -1,0 +1,70 @@
+.label{
+    color:white;
+    margin-right:25px;
+    display: flex;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.input:hover{
+    box-shadow: 4px 4px 4px cyan;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+
+
+.desc{
+    font-size:20px;
+    margin-bottom:10px;
+    color:white;
+ }
+.form{
+    margin:5px;
+    box-shadow:6px 6px 16px 4px white;
+    border:2px solid white;
+    padding:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.head{
+    display: flex;
+    font-size:27px;
+    color:white;
+}
+.head svg{
+    margin-right:10px;
+}
+.submit svg{
+    margin-left:10px;
+}
+.submit{
+    display: flex;
+    color:white;
+    background-color:blue;
+    padding:10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top:20px;
+    font-size:17px;
+    cursor:pointer;
+    width:150px;
+}
+
+.input{
+    width:300px;
+    padding:0px 10px;
+    font-size:20px;
+    color:blue;
+    border-radius: 10px;
+}
+span{
+    display: flex;
+}
