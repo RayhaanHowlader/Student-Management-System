@@ -1,0 +1,32 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid black;
+    box-shadow: 6px 6px 16px 4px;
+    padding:20px;
+    background-image:url("https://img.freepik.com/free-vector/flat-geometric-background_23-2148957211.jpg?semt=ais_hybrid");
+    background-size:cover;
+    background-position:center;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    margin-right:10px;
+}
+.head{
+    color:black;
+    font-weight: bold;
+    font-size:30px;
+}
+.container span{
+    margin: 7px;
+}
+.input{
+    border:2px solid black;
+    border-radius: 10px;
+    padding:2px 10px;
+}
