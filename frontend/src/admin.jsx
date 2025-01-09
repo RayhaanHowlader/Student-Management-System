@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import React,{useState} from "react"
 import axios from "axios"
 function Admin(){
+    const [isInvalid, setIsInvalid] = useState(false); // State to track invalid credentials
+
     const navigate=useNavigate();
     const [user,setUser]=useState();
     const [pass,setPass]=useState();
@@ -11,7 +13,12 @@ function Admin(){
         axios.post('http://localhost:3000/checkadmin',{user,pass}).then(result=>{
         console.log(result.data); 
         if(result.data=="success"){
-            navigate("/results");
+            navigate("/adminpage");
+        }
+        else{
+            setIsInvalid(true); // Show the invalid message
+
+
         }
         })}
     
@@ -20,6 +27,16 @@ function Admin(){
         <form method="post" 
          className='w-full max-w-md bg-gray-800 rounded-lg shadow-lg border border-gray-700 p-6 sm:p-8' 
          onSubmit={handleSubmit}>
+
+             
+                    {/* Conditionally render the invalid message */}
+                    <div
+                        className="hidden text-white"
+                        style={{ display: isInvalid ? "block" : "none" }}
+                    >
+                        Invalid username or Password
+                    </div>
+
        <h1 className='text-2xl sm:text-3xl text-white font-bold text-center mb-6'>
         Admin Login</h1>
         <div  className='mb-4'>

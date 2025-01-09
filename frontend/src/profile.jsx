@@ -38,7 +38,7 @@ const submitprofile=(e)=>{
     const result =  axios.post("http://localhost:3000/profile-update",formData,{
             headers :{ "Content-Type" : "multipart/form-data"}
         });
-        navigate("http://localhost:5173/dash")
+        navigate("/dash")
      
     }
     
@@ -46,7 +46,7 @@ const submitprofile=(e)=>{
     return(<>
     <div className={styles.cont}>
     <form className={styles.container} method="post" onSubmit={submitprofile}>
-        <h1 className={styles.head}>Admission Form</h1>
+        <h1 className={styles.head}>Edit ProfileForm</h1>
         <span className="sp"><label className={styles.label}>First Name : </label><input  className={styles.input} type="text" name="" id="1" onChange={(e)=>setFirstName(e.target.value)} /></span>
         <span className="sp"><label className={styles.label}>Full Name : </label><input className={styles.input} type="text" name="" id="2" onChange={(e)=>setLastName(e.target.value)} /></span>
         <span className="sp"><label className={styles.label}>Age : </label><input  className={styles.input}type="number" name="" id="3" onChange={(e)=>setAge(e.target.value)} /></span>

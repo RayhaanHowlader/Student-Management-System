@@ -1,6 +1,8 @@
 const mongoose=require("mongoose");
 const KTSchema=new mongoose.Schema({
-    Subject:String
+    rollNumber: String,
+  subjects: [String],
+  totalCost: Number,
 });
-const KTModel=mongoose.model("employees",KTSchema);
+const KTModel=mongoose.model("kt",KTSchema);
 module.exports=KTModel;

@@ -1,4 +1,4 @@
-
+import AdminDashboard from "./adminpage.jsx";
 import React from "react";
 import Profile from "./profile.jsx"
 import Verify from "./adminverify.jsx"
@@ -41,6 +41,7 @@ function App() {
         <Route path="/wallet" element={<Wallet></Wallet>}></Route>
         <Route path="/walletuser" element={<WalletUser></WalletUser>}></Route>
         <Route path="/atkt" element={<ATKT></ATKT>}> </Route>
+        <Route path="/adminpage" element={<AdminDashboard></AdminDashboard>}></Route>
         </Routes>
     </BrowserRouter>
   );

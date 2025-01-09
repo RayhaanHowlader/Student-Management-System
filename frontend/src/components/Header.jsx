@@ -14,7 +14,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-3xl font-bold">
           <Link to="/" className="flex items-center">
-            <img src="\src\assets\thakur  college img.png" alt="college Logo" className="w-12 h-12 mr-2" />
+            <img src="\src\assets\thakur  college img.png" alt="college Logo" className="w-8 h-12 mr-2" />
             Thakur College
           </Link>
         </div>
@@ -27,11 +27,17 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8 font-semibold ">
           <Link to="/" className="hover:text-sky-200 hover:text-lg">Home</Link>
           <Link to="/about" className="hover:text-sky-200 hover:text-lg">About</Link>
-          <Link to="#" className="hover:text-sky-200 hover:text-lg">Admission</Link>
-          <Link to="#" className="hover:text-sky-200 hover:text-lg">
+          <Link to="/dash" className="hover:text-sky-200 hover:text-lg">Dashboard</Link>
+          <Link to="/admissionform" className="hover:text-sky-200 hover:text-lg">Admission</Link>
+          <Link to="/login" className="hover:text-sky-200 hover:text-lg">Login</Link>
+          <Link to="/register" className="hover:text-sky-200 hover:text-lg">Register</Link>
+          <Link to="/admin" className="hover:text-sky-200 hover:text-lg">Admin Login</Link>
+          <Link to="profile" className="hover:text-sky-200 hover:text-lg">
+          <i className="fa-regular fa-circle-user"></i>
             <span>Profile</span> 
-            <i className="fa-regular fa-circle-user"></i>
+          
           </Link>
+
         </nav>
 
         <div className={`md:hidden absolute top-0 left-0 right-0 bg-blue-800 transition-transform duration-300 ease-in-out transform ${MenuOption ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -41,13 +47,17 @@ const Header = () => {
             </button>
           </div>
           <nav className="flex flex-col items-center p-4 space-y-4">
-            <Link to="/" className="text-white hover:text-blue-500">Home</Link>
-            <Link to="/about" className="text-white hover:text-blue-500">About</Link>
-            <Link to="#" className="text-white hover:text-blue-500">Admission</Link>
-            <Link to="#" className="text-white hover:text-blue-500">
-              <span>Profile</span> 
-              <i className="fa-regular fa-circle-user"></i>
-            </Link>
+          <Link to="/" className="hover:text-sky-200 hover:text-lg">Home</Link>
+          <Link to="/about" className="hover:text-sky-200 hover:text-lg">About</Link>
+          <Link to="/dash" className="hover:text-sky-200 hover:text-lg">Dashboard</Link>
+          <Link to="/admissionform" className="hover:text-sky-200 hover:text-lg">Admission</Link>
+          <Link to="/login" className="hover:text-sky-200 hover:text-lg">Login</Link>
+          <Link to="/register" className="hover:text-sky-200 hover:text-lg">Register</Link>
+          <Link to="/admin" className="hover:text-sky-200 hover:text-lg">Admin Login</Link>
+          <Link to="profile" className="hover:text-sky-200 hover:text-lg">
+            <span>Profile</span> 
+            <i className="fa-regular fa-circle-user"></i>
+          </Link>
           </nav>
         </div>
       </div>

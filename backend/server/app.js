@@ -1,5 +1,6 @@
 const express =  require("express");
 const mongoose = require("mongoose");
+const KTModel=require("./models/kt.js");
 const cors=require("cors");
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = "hello_world";
@@ -8,7 +9,6 @@ const formModel=require("./models/formdetails")
 const WalletModel=require("./models/wallet.js")
 const multer=require("multer");
 const path = require("path");
-
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -29,7 +29,10 @@ const port =3000;
 app.use(express.json());
 app.use(cors());
 app.use("/files", express.static(path.join(__dirname, "files")));
+const filesDirectory = path.join(__dirname, 'files');
 
+// Serve static files from the 'files' directory
+app.use('/files', express.static(filesDirectory));
 mongoose.connect("mongodb://localhost:27017/employee");
 app.post('/reg',(req,res) => {
     EmployeeModel.create(req.body)
@@ -251,9 +254,16 @@ app.get("/profile/:email", (req, res) => {
       })
       .catch((err) => res.status(500).json({ message: "Error fetching profile", error: err }));
   });
-app.get("/kt",(req,res)=>{
-    
-})
+
+  app.post("/kt", (req, res) => {
+    const { rollNumber, subjects, totalCost } = req.body;
+  console.log(req.body)
+    KTModel.create({ rollNumber, subjects, totalCost })
+      .then((result) => res.json({ message: "Data stored successfully!", result }))
+      .catch((err) => res.status(500).json({ message: "Error storing data", error: err }));
+  });
+  
+
 app.listen(port,()=>{
     console.log(`server is running at port ${port}`);
 });

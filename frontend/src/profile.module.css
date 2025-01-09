@@ -10,6 +10,9 @@
     opacity: 1;
     box-shadow: 6px 6px 16px cyan; 
 }
+.container span{
+    margin:10px;
+}
 .select{
     border-radius:10px;
     background-color: white;
@@ -17,7 +20,8 @@
 .label{
     margin-right: 5px;
     font-weight: bold;
-    color:rgb(52, 218, 255);
+    color:black;
+    font-size:18px;
 }
 /* body{
     background-color: black;
