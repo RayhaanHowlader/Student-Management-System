@@ -40,58 +40,62 @@ const Verify = () => {
     };
 
     if (loading) {
-        return <p>Loading details...</p>;
+        return <p className="text-center text-xl font-bold ">Loading details...</p>;
     }
 
     if (error) {
-        return <p>{error}</p>;
+        return <p className="text-center text-xl font-bold text-red-500">{error}</p>;
     }
 
     return (
-        <div>
-            <h1>Admin Details</h1>
+        <div className="container mx-auto px-4 py-8 font-serif">
+            <h1 className="text-3xl font-bold text-center mb-4">Admin Details</h1>
+            <h3 className="text-2xl font-bold text-center mb-0">Admission's Verification</h3>
             {details.length === 0 ? (
-                <p>No details found.</p>
+                <p className="text-center text-xl font-bold">No details found.</p>
             ) : (
-                <table border="1" style={{ width: "100%", textAlign: "left" }}>
-                    <thead>
+                <div className="overflow-x-auto">
+                <table  className="w-full shadow-md rounded-lg border border-collapse border-gray-300 overflow-hidden ">
+                    <thead className="bg-gray-100">
                         <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Age</th>
-                            <th>Adhaar Number</th>
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th className="text-left px-4 py-3">Name</th>
+                            <th className="text-left px-4 py-3">Address</th>
+                            <th className="text-left px-4 py-3">Age</th>
+                            <th className="text-left px-4 py-3">Adhaar Number</th>
+                            <th className="text-left px-4 py-3">Date</th>
+                            <th className="text-left px-4 py-3">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {details.map((detail) => (
                             <tr
                                 key={detail.adhaarNumber}
-                                style={{
-                                    backgroundColor: detail.verified ? "#d4edda" : "transparent",
-                                }}
+                                className={` border-b border-gray-200 text-sm sm:text-base ${
+                                    detail.verified ? "bg-blue-100" : "bg-white"
+                                  }`}
                             >
-                                <td>{detail.name}</td>
-                                <td>{detail.address}</td>
-                                <td>{detail.age}</td>
-                                <td>{detail.adhaarNumber}</td>
-                                <td>{new Date(detail.date).toLocaleDateString()}</td>
-                                <td>
+                                <td className="px-4 py-3">{detail.name}</td>
+                                <td className="px-4 py-3">{detail.address}</td>
+                                <td className="px-4 py-3">{detail.age}</td>
+                                <td className="px-4 py-3">{detail.adhaarNumber}</td>
+                                <td className="px-4 py-3">{new Date(detail.date).toLocaleDateString()}</td>
+                                <td className="px-4 py-3">
                                     {!detail.verified ? (
                                         <button
+                                        className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700 focus:outline-none"
                                             onClick={() => verifyDetail(detail.adhaarNumber)}
                                         >
                                             Verify
                                         </button>
                                     ) : (
-                                        <span>Verified</span>
+                                        <span className="text-green-500 font-bold">Verified</span>
                                     )}
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+                </div>
             )}
         </div>
     );

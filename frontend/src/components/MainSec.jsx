@@ -4,16 +4,12 @@ import campusImg4 from '../assets/campus_img4.png'
 import campusImg3 from '../assets/campus_img3.png'
 import campusImg2 from '../assets/campus_img2.png'
 import campusImg1 from '../assets/campus_img1.png'
+import { useNavigate } from 'react-router-dom';
 
 
 const MainSec = () => {
+ const navigate=useNavigate();
 
-
- const [isModalOpen,setIsModalOpen]=useState(false);
- 
- const Modalchange=()=>{
-  setIsModalOpen(!isModalOpen);
- }
 
 
 
@@ -54,7 +50,9 @@ const MainSec = () => {
           Explore our vibrant campus, talented faculty, and opportunities to build your future.
         </p>
         <button 
+        onClick={()=>navigate('/about')}
         className="mt-6 px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600">
+          
           Learn More
         </button>
       </div>
@@ -80,7 +78,7 @@ const MainSec = () => {
           <div className="bg-white shadow-lg  hover:shadow-2xl transition-shadow duration-300 p-6 rounded-lg  ">
             <h3 className="font-bold text-lg">Science Exhibition</h3>
             <p className="text-sm text-gray-600">Discover innovations and creativity at the annual exhibit.</p>
-            <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            <button  className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
         Learn More
       </button>
           </div>
