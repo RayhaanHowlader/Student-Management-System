@@ -15,6 +15,18 @@ function ATKT() {
     }
   };
 
+  // Handle final form submission to database
+  const handleSubmitToDatabase = () => {
+    // Create FormData object
+    const formData = new FormData();
+    formData.append("subjects", JSON.stringify(subjects));
+    const result =  axios.post("http://localhost:3000/kt",formData,{
+      headers :{ "Content-Type" : "multipart/form-data"}
+  });
+  navigate("http://localhost:5173/dash")
+    // You can send the formData object to your server here using fetch or axios
+  };
+
   return (
     <div>
       <h1>Subject Entry Form</h1>
@@ -38,6 +50,7 @@ function ATKT() {
           <li key={index}>{subject}</li>
         ))}
       </ul>
+      <button type="submit" onClick={handleSubmitToDatabase}>Submit</button>
     </div>
   );
 }

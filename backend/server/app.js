@@ -251,7 +251,9 @@ app.get("/profile/:email", (req, res) => {
       })
       .catch((err) => res.status(500).json({ message: "Error fetching profile", error: err }));
   });
-
+app.get("/kt",(req,res)=>{
+    
+})
 app.listen(port,()=>{
     console.log(`server is running at port ${port}`);
 });

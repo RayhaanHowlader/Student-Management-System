@@ -1,7 +1,56 @@
 import './dashboard.css'
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useState } from 'react';
 function Dashboard(){
  
+
+  const navigate=useNavigate();
+  const [userProfile, setUserProfile] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
+  const email = localStorage.getItem("LoggedInUser");
+
+  useEffect(()=>{
+
+      const verifyToken = async () => {
+          const response = await fetch("http://localhost:3000/dash", {
+              headers: {
+                  Authorization: localStorage.getItem("token"),
+              },
+          });
+          console.log(response);
+          if (response.status === 403) {
+              localStorage.removeItem("token");
+              navigate("/login");
+          }
+          
+      
+      };
+
+
+      const fetchUserProfile = async () => {
+          if (email) {
+              try {
+                  const response = await fetch(`http://localhost:3000/profile/${email}`);
+                  if (response.ok) {
+                      const data = await response.json();
+                      setUserProfile(data.profileImage);
+                  } else {
+                      console.error("Failed to fetch profile:", response.status);
+                  }
+              } catch (error) {
+                  console.error("Error fetching profile:", error);
+                  navigate("/login");
+              }
+          }
+      };
+     
+      verifyToken();
+      fetchUserProfile();
+    
+
+},[]);
+console.log(email);
    // State for toggling sidebar
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -90,7 +139,7 @@ function Dashboard(){
          className='search-input  w-full md:w-1/2 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
          />
          <div className='flex items-center'>
-         <img src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png" alt=" profile img"
+         <img src={userProfile} alt=" profile img"
          className=' profile-img  w-10 h-10 rounded-full mr-2' />
          <span className=' text-gray-700'>rahyann@gmail.com</span>
         </div>
