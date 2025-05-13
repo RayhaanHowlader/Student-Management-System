@@ -55,6 +55,7 @@ const Header = () => {
           <Link to="/register" className="hover:text-sky-200 hover:text-lg">Register</Link>
           <Link to="/admin" className="hover:text-sky-200 hover:text-lg">Admin Login</Link>
           <Link to="profile" className="hover:text-sky-200 hover:text-lg">
+            //Adding Profile Page
             <span>Profile</span> 
             <i className="fa-regular fa-circle-user"></i>
           </Link>
