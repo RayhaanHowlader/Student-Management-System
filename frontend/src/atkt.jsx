@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import axios from "axios";
 import { jsPDF } from "jspdf";
 import styles from "./atkt.module.css"
@@ -58,6 +58,10 @@ function ATKT() {
     doc.text(`Total Cost: ₹${totalCost}`, 20, 60 + subjects.length * 10);
     doc.save("receipt.pdf");
   };
+
+
+
+
 
   return (
     <div className={styles.container}>
