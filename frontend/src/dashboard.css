@@ -24,6 +24,9 @@
   background-color: #f8fafc;
 }
 
+
+
+
 .search-input:focus{
   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
 }
